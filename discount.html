@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Discount Calculation</title>
+ </head>
+<body>
+
+<h2>Pradeep Rao Veeramaneni computes discounts </h2>
+<h2>getting input</h2>
+
+<form>
+    <label for="form1_age">Enter product base amount </label>
+    <input type ="number" id="form1_age" name="form1_age" min=10 max=50 step=2 value=20> <br>
+
+    <label for="form1_nick">Enter discount percentage applies </label>
+    <input type ="number" id="form1_nick" name="form1_nick" value = 10 autofocus> <br>
+
+    <input type="button" class="btn btn-primary" onclick="discount()" value="Apply discount ">
+</form>
+<p id="result1">This text will be replaced </p>
+
+
+<script> 
+
+function discount(){
+    let result=""
+    console.log("Getting form values")
+    base = document.getElementById("form1_age").value
+    discountPercentage = document.getElementById("form1_nick").value
+    for(let i=1;i<6;i++)
+    {
+        result=result+((i*base)-(i*base)*discountPercentage/100)+" "
+    }
+
+    out = document.getElementById("result1")
+    out.innerHTML = "Discounted amounts for "+base+" value are: "+result
+}
+
+
+
+</script>
+
+</body>
+</html>
