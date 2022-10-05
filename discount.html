@@ -20,6 +20,21 @@
 <p id="result1">This text will be replaced </p>
 
 
+<form  >
+    <input type="radio" id="rg1_red" name="color" value="times"  onclick="chooseOp()" checked >
+    <label for="rg1_red">*</label></br>
+  
+    <input type="radio" id="rg1_blue" name="color" onclick="chooseOp()" value="divide">
+    <label for="rg1_blue">/</label></br>
+  
+    <input type="radio" id="rg1_green" name="color"  onclick="chooseOp()" value="exponent">
+    <label for="rg1_green">**</label></br>
+
+    <input type="button" class="btn btn-success" onclick="chooseOp()" value="Get values from radio group">
+  </form>
+
+<p id="result">This text will be replaced </p>
+
 <script> 
 
 function discount(){
@@ -37,7 +52,21 @@ function discount(){
 }
 
 
-
+function chooseOp(){
+    
+    base = document.getElementById("form1_age").value
+    discountPercentage = document.getElementById("form1_nick").value
+    redOpt = document.getElementById("rg1_red").checked
+    blueOpt = document.getElementById("rg1_blue").checked
+    greenOpt = document.getElementById("rg1_green").checked
+    out = document.getElementById("result")
+    if(redOpt==true)
+    out.innerHTML = base*discountPercentage
+    if(blueOpt==true)
+    out.innerHTML = base/discountPercentage
+     if(greenOpt==true)
+    out.innerHTML = base**discountPercentage
+}
 </script>
 
 </body>
