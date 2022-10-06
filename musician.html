@@ -37,11 +37,13 @@
         console.log("Getting form values")
         musician_name = document.getElementById("form1_musician_name").value
         user_entered = document.getElementById("form1_nick").value
-        if(musician_name == user_entered){
+        if(musician_name == user_entered&&count<3){
+            
             alert("You got it right")
             count=0
             correct += 1
-        } else {
+        }
+         else {
             if(count<3){
             alert("Wrong Musician")
             wrong += 1
@@ -50,6 +52,7 @@
     else{
         alert("Sorry,game over.")
     }
+
 }
         document.getElementById("result").innerHTML = "Correct count : "+correct + "<br>" + "Wrong Count : " + wrong
     }
